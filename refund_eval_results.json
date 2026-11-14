@@ -1,0 +1,340 @@
+{
+  "timestamp": "2026-11-14T16:01:39.359575",
+  "summary": {
+    "total_test_cases": 20,
+    "overall_outcome_accuracy": 1.0,
+    "overall_section_accuracy": 1.0,
+    "overall_pass_rate": 1.0,
+    "category_breakdown": {
+      "aircover_claim": {
+        "total": 4,
+        "outcome_accuracy": 1.0,
+        "section_accuracy": 1.0,
+        "pass_rate": 1.0
+      },
+      "host_cancellation": {
+        "total": 4,
+        "outcome_accuracy": 1.0,
+        "section_accuracy": 1.0,
+        "pass_rate": 1.0
+      },
+      "late_checkout_dispute": {
+        "total": 4,
+        "outcome_accuracy": 1.0,
+        "section_accuracy": 1.0,
+        "pass_rate": 1.0
+      },
+      "non_refundable": {
+        "total": 4,
+        "outcome_accuracy": 1.0,
+        "section_accuracy": 1.0,
+        "pass_rate": 1.0
+      },
+      "partial_refund": {
+        "total": 4,
+        "outcome_accuracy": 1.0,
+        "section_accuracy": 1.0,
+        "pass_rate": 1.0
+      }
+    },
+    "confusion_matrix": {
+      "allow_full": {
+        "allow_full": 7,
+        "allow_partial": 0,
+        "deny": 0
+      },
+      "allow_partial": {
+        "allow_full": 0,
+        "allow_partial": 5,
+        "deny": 0
+      },
+      "deny": {
+        "allow_full": 0,
+        "allow_partial": 0,
+        "deny": 8
+      }
+    }
+  },
+  "results": [
+    {
+      "question_id": "RQ-01",
+      "scenario_category": "non_refundable",
+      "guest_question": "I booked a non-refundable rate but my work trip got cancelled, is there any way to get my money back?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Under the Non-refundable policy, guests who chose the 10% discount at booking receive no refund of the nightly rate or fees when cancelling for any reason, including cancelled work trips or changed travel plans. Your refund request is denied.",
+      "predicted_answer": "Under the Non-refundable rate, cancellations for any reason receive no refund of the nightly rate or fees.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-02",
+      "scenario_category": "non_refundable",
+      "guest_question": "The chatbot already told me yesterday I'd get a full refund on my non-refundable booking, so when will that come through?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Your reservation was booked under a Non-refundable rate. According to the policy, non-refundable bookings receive no refund of the nightly rate or fees upon guest cancellation, regardless of prior incorrect statements made by automated bots. The refund cannot be processed.",
+      "predicted_answer": "Under the Non-refundable rate, cancellations for any reason receive no refund of the nightly rate or fees.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-03",
+      "scenario_category": "non_refundable",
+      "guest_question": "My daughter got sick and we can't travel, I picked the no-refund option but surely there's an exception?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "While we sympathize with family medical emergencies, the Non-refundable cancellation policy explicitly states that cancellations for any reason\u2014including personal illness and changed plans\u2014are not eligible for any refund of the nightly rate or fees.",
+      "predicted_answer": "Under the Non-refundable rate, cancellations for any reason receive no refund of the nightly rate or fees.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-04",
+      "scenario_category": "non_refundable",
+      "guest_question": "Booked non-refundable and now the dates don't work for us, can I at least get the cleaning and service fee back?",
+      "expected_outcome": "allow_partial",
+      "predicted_outcome": "allow_partial",
+      "outcome_match": true,
+      "expected_section": "Service and cleaning fees",
+      "predicted_section": "Service and cleaning fees",
+      "section_match": true,
+      "reference_answer": "Under the policy, the cleaning fee is refunded whenever the guest cancels before check-in on any tier, including Non-refundable. However, the guest service fee and nightly rate are non-refundable because the service fee is only refunded when a cancellation qualifies for a full refund under tier rules. Therefore, you receive a partial refund consisting solely of the cleaning fee.",
+      "predicted_answer": "The cleaning fee is refunded whenever the guest cancels before check-in on any tier. However, the service fee and nightly rate are non-refundable.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-05",
+      "scenario_category": "aircover_claim",
+      "guest_question": "There's been no hot water since we arrived and the host isn't responding, what am I owed here?",
+      "expected_outcome": "allow_partial",
+      "predicted_outcome": "allow_partial",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "Lack of hot water is an explicitly covered issue type under AirCover ('No hot water or other essential amenity missing'). Because it was reported within 72 hours of discovery, you are eligible for AirCover protection, which provides rebooking assistance or a full/partial refund for the affected nights based on severity.",
+      "predicted_answer": "The issue 'no_hot_water' is covered under AirCover and was reported within 72 hours. The guest qualifies for rebooking assistance and a full or partial refund for affected nights.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-06",
+      "scenario_category": "aircover_claim",
+      "guest_question": "The place looks nothing like the photos, it's filthy and half the rooms are locked. I want a refund.",
+      "expected_outcome": "allow_partial",
+      "predicted_outcome": "allow_partial",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "Under AirCover for guests, 'Listing not as described' (including severe cleanliness issues and locked rooms) is a covered issue. Because you reported it within 72 hours of arrival, you are eligible for rebooking assistance or a partial/full refund for affected nights depending on severity.",
+      "predicted_answer": "The issue 'listing_not_as_described' is covered under AirCover and was reported within 72 hours. The guest qualifies for rebooking assistance and a full or partial refund for affected nights.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-07",
+      "scenario_category": "aircover_claim",
+      "guest_question": "We couldn't get in at all, the code didn't work and nobody answered for hours so we booked a hotel.",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "Under AirCover for guests, 'Could not check in' is a covered issue when reported within 72 hours. Because you were entirely unable to access the listing and had to book alternative lodging due to no host response, you are entitled to a full refund for the affected stay as well as rebooking support.",
+      "predicted_answer": "Inability to check in is covered under AirCover when reported within 72 hours. Because the guest could not access the listing, a full refund and rebooking help are provided.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-08",
+      "scenario_category": "aircover_claim",
+      "guest_question": "I found roaches in the kitchen on our first night three days ago but only reporting it now, can I still claim?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "Although pests are a covered category under AirCover, the policy explicitly dictates that the issue must be reported within 72 hours of discovery. Because you discovered the roaches on your first night and reported them more than 72 hours later (5 days into the stay), this claim is ineligible for an AirCover refund.",
+      "predicted_answer": "AirCover claims must be reported within 72 hours of discovery. Because this was reported more than 72 hours after discovery, it is not eligible for a refund.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-09",
+      "scenario_category": "partial_refund",
+      "guest_question": "I need to cancel a few weeks out, my policy is moderate, how much of the total do I get back?",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Under the Moderate cancellation policy, cancelling at least 5 days before check-in entitles you to a full refund of the nightly rate. Because you are cancelling 22 days before check-in, you receive a full refund of the nightly rate, the cleaning fee, and the guest service fee.",
+      "predicted_answer": "Cancelled at least 5 days before check-in under Moderate: full refund of nightly rate and fees.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-10",
+      "scenario_category": "partial_refund",
+      "guest_question": "Cancelling my flexible booking today, check-in isn't until next month, do I lose anything?",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Under the Flexible cancellation policy, cancelling at least 24 hours prior to check-in qualifies for a full refund of the nightly rate. Because check-in is over a month away, you receive a 100% full refund, including the guest service fee and cleaning fee.",
+      "predicted_answer": "Cancelled at least 24 hours before check-in under Flexible: full refund of nightly rate and fees.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-11",
+      "scenario_category": "partial_refund",
+      "guest_question": "I have a firm policy and need to cancel about two weeks before arrival, what's the refund amount?",
+      "expected_outcome": "allow_partial",
+      "predicted_outcome": "allow_partial",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Under the Firm cancellation policy, cancelling 7 to 29 days before check-in qualifies for a 50% refund of the nightly rate plus a full refund of the cleaning fee. The service fee is not refunded for partial cancellations. Because you are cancelling 16 days prior to arrival, you receive a partial refund.",
+      "predicted_answer": "Cancelled 7 to 29 days before check-in under Firm: 50% refund of nightly rate.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-12",
+      "scenario_category": "partial_refund",
+      "guest_question": "Booked a strict listing 40 hours ago and now I have to cancel, check-in is 10 days out, what do I get back?",
+      "expected_outcome": "allow_partial",
+      "predicted_outcome": "allow_partial",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Under the Strict cancellation policy, a full refund requires cancelling within 48 hours of booking AND at least 14 days before check-in. Although you booked 40 hours ago, check-in is only 10 days out (< 14 days). Therefore, the 50% refund rule applies (cancelled at least 7 days before check-in). You receive 50% of the nightly rate plus the cleaning fee; the service fee is non-refundable.",
+      "predicted_answer": "Check-in is only 10 days out (< 14 days), so it does not qualify for full refund. Since it is cancelled at least 7 days before check-in, 50% of nightly rate is refunded.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-13",
+      "scenario_category": "host_cancellation",
+      "guest_question": "My host just cancelled on me the night before check-in and I have nowhere to stay, what happens now?",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "Host cancellations",
+      "predicted_section": "Host cancellations",
+      "section_match": true,
+      "reference_answer": "When the host cancels a reservation, the guest receives a full refund of everything paid, including the service fee. Additionally, because the cancellation occurred within 30 days of check-in, AirCover assists you with rebooking a similar stay.",
+      "predicted_answer": "When the host cancels, the guest receives a full refund of everything paid, including the service fee. This applies across all tiers including Non-refundable.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-14",
+      "scenario_category": "host_cancellation",
+      "guest_question": "Host cancelled my reservation this morning saying the place is unavailable, do I get everything back?",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "Host cancellations",
+      "predicted_section": "Host cancellations",
+      "section_match": true,
+      "reference_answer": "Yes, you get everything back. Under the Host cancellations policy, when the host cancels, the guest receives a full refund of all amounts paid, including nightly rates, cleaning fees, and service fees.",
+      "predicted_answer": "When the host cancels, the guest receives a full refund of everything paid, including the service fee. This applies across all tiers including Non-refundable.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-15",
+      "scenario_category": "host_cancellation",
+      "guest_question": "I booked a non-refundable rate and the host went and cancelled it themselves, am I stuck losing the money?",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "Host cancellations",
+      "predicted_section": "Host cancellations",
+      "section_match": true,
+      "reference_answer": "No, you will not lose your money. The Host cancellations policy explicitly states that when the host cancels, the guest receives a full refund of everything paid, including the service fee. This rule applies on every tier, including Non-refundable, and overrides tier restrictions.",
+      "predicted_answer": "When the host cancels, the guest receives a full refund of everything paid, including the service fee. This applies across all tiers including Non-refundable.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-16",
+      "scenario_category": "host_cancellation",
+      "guest_question": "The host cancelled two days ago and I still haven't seen a refund, can you check on it?",
+      "expected_outcome": "allow_full",
+      "predicted_outcome": "allow_full",
+      "outcome_match": true,
+      "expected_section": "Host cancellations",
+      "predicted_section": "Host cancellations",
+      "section_match": true,
+      "reference_answer": "Because your host cancelled the reservation, you are entitled to a full refund of all amounts paid, including the service fee. We will verify that the full refund is processed to your original payment method.",
+      "predicted_answer": "When the host cancels, the guest receives a full refund of everything paid, including the service fee. This applies across all tiers including Non-refundable.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-17",
+      "scenario_category": "late_checkout_dispute",
+      "guest_question": "Host is demanding an extra night fee because we left at 2pm instead of 11am, do I really have to pay that?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "Under the policy excerpt, staying past checkout time is not a covered cancellation or AirCover issue. AirCover protects only against four specific issues (check-in failure, listing not as described, missing essential amenities, and pests). Late checkout disputes and fees are not eligible for a refund or waiver under this policy.",
+      "predicted_answer": "Late checkout disputes and fee waivers are not among the four covered AirCover issue types and are ineligible for refunds under this policy.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-18",
+      "scenario_category": "late_checkout_dispute",
+      "guest_question": "We decided to leave a night early because we were done with our trip, can I get that last night refunded?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "Guest cancellation tiers",
+      "predicted_section": "Guest cancellation tiers",
+      "section_match": true,
+      "reference_answer": "Under the Firm cancellation policy, cancellations made less than 7 days before check-in or during an ongoing stay receive no refund for unused nights. Personal decisions to conclude a trip early do not qualify for a refund of the remaining nights.",
+      "predicted_answer": "Voluntarily leaving a stay early under a Firm policy does not qualify for a refund of unused nights.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-19",
+      "scenario_category": "late_checkout_dispute",
+      "guest_question": "The listing said checkout was noon but the host says 10am and charged me a late fee, is that allowed?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "Disputes regarding host late checkout fees are not covered under the four eligible AirCover categories (could not check in, listing not as described, missing essential amenities, or pests). Issues outside these four categories are not eligible for an AirCover refund.",
+      "predicted_answer": "Late checkout disputes and fee waivers are not among the four covered AirCover issue types and are ineligible for refunds under this policy.",
+      "passed": true
+    },
+    {
+      "question_id": "RQ-20",
+      "scenario_category": "late_checkout_dispute",
+      "guest_question": "Our flight was delayed so we stayed past checkout by an hour, now there's a fee on my account, can it be waived?",
+      "expected_outcome": "deny",
+      "predicted_outcome": "deny",
+      "outcome_match": true,
+      "expected_section": "AirCover for guests",
+      "predicted_section": "AirCover for guests",
+      "section_match": true,
+      "reference_answer": "While travel and flight delays are frustrating, unauthorized late checkout fees are not eligible for refunds or waivers under the policy excerpt. AirCover only covers the four designated issues, and flight delays do not qualify for fee refunds under this policy.",
+      "predicted_answer": "Late checkout disputes and fee waivers are not among the four covered AirCover issue types and are ineligible for refunds under this policy.",
+      "passed": true
+    }
+  ]
+}
