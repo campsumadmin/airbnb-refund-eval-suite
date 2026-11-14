@@ -179,7 +179,12 @@ The 20 questions are evenly distributed across all five distinct scenario types:
 
 ---
 
-### Scenario Type 5: `late_checkout_dispute`
+### Scenario Type 5: `late_checkout_dispute` & In-Stay Departure
+
+> **Important Classification & Policy Citation Note:**  
+> While the source CSV labels all four rows (RQ-17 to RQ-20) under the `late_checkout_dispute` category, a close policy reading reveals two distinct functional buckets:  
+> 1. **Early Departure / Unused Nights (RQ-18):** The guest voluntarily departed a night early and is requesting a refund for the unused night under a Firm listing. Because this is a guest cancellation of booked nights, it is governed by and must cite **`Guest cancellation tiers`** (Firm policy rule: cancellations inside 7 days receive *no refund* for unused nights).  
+> 2. **Late Checkout & Fee Disputes (RQ-17, RQ-19, RQ-20):** These questions involve guests overstaying checkout or disputing host late checkout penalties. Because no cancellation took place, they are evaluated under Airbnb's stay protection framework, **`AirCover for guests`**, and denied under the exclusionary rule that issues outside the four covered types are ineligible for refunds or fee waivers.
 
 #### Pair 17: RQ-17
 - **Guest Question:** "Host is demanding an extra night fee because we left at 2pm instead of 11am, do I really have to pay that?"
