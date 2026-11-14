@@ -241,8 +241,9 @@ TEST_SET_ANSWERS: Dict[str, Dict[str, str]] = {
         "outcome_tag": "deny",
         "policy_section": "Guest cancellation tiers",
         "reference_answer": (
-            "Denied. Under 'Guest cancellation tiers' for Firm listings, cancellations requested less than 7 days before check-in or "
-            "during an ongoing stay receive no refund for unused nights. Voluntary early departure due to personal trip completion is not eligible for a refund."
+            "Denied. Under 'Guest cancellation tiers' for Firm listings, guests who cancel less than 7 days before check-in receive no refund. "
+            "Counting the days between the cancellation date (2025-03-06) and check-in date (2025-03-04) places this request in the "
+            "less than 7 days before check-in window (-2 days), so no refund is owed."
         ),
     },
     "RQ-19": {
