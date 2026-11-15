@@ -241,10 +241,10 @@ TEST_SET_ANSWERS: Dict[str, Dict[str, str]] = {
         "outcome_tag": "deny",
         "policy_section": "Guest cancellation tiers",
         "reference_answer": (
-            "Denied. Under 'Guest cancellation tiers', the Firm policy defines refund conditions exclusively "
-            "for cancellations occurring before check-in (at least 30 days, 7 to 29 days, or less than 7 days before check-in). "
-            "The excerpt contains no rule or wording granting a refund for early departure or cancellation after check-in. "
-            "Because the guest checked in on 2025-03-04 and voluntarily departed on 2025-03-06, there is no policy basis for a refund."
+            "Denied. Under 'Guest cancellation tiers', the Firm policy covers only cancellations made before check-in "
+            "and contains no rule or wording granting a refund for early departures or cancellations after check-in. "
+            "Because the guest checked in on 2025-03-04 and requested cancellation after check-in on 2025-03-06, "
+            "no refund is provided under the policy."
         ),
     },
     "RQ-19": {
