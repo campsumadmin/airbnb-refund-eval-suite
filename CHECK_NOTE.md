@@ -1,19 +1,60 @@
 # Check Note: Airbnb Refund Evaluation Suite (Stage 1)
 
-**Verification Date:** 14 November 2026  
+**Verification Date:** 15 November 2026  
 **Dataset:** "Guest Refund Questions, 3-11 March 2025" (`airbnb_guest_refund_questions_mar2025.csv`)  
 **Governing Policy:** "Cancellation, Refund and AirCover Policy Excerpt" (Effective 1 January 2025)  
 **Status:** ✅ **CONFIRMED — 20 Pairs | All 5 Types | 0 Unclear Answers**
 
 ---
 
-## 1. Executive Verification Summary
+## 1. Executive Verification Summary & Regenerated Script Output
+
+```text
+======================================================================================
+AIRBNB REFUND EVAL SUITE - STAGE 1 VERIFICATION & CHECK NOTE
+======================================================================================
+Total Question-Answer Pairs Loaded: 20
+Distinct Scenario Categories:        5 (all 5 present)
+Scenario Types Breakdown:
+  - aircover_claim          : 4 pairs
+  - host_cancellation       : 4 pairs
+  - late_checkout_dispute   : 4 pairs
+  - non_refundable          : 4 pairs
+  - partial_refund          : 4 pairs
+Unclear / Hedged Answers Count:     0
+======================================================================================
+ID     | Scenario               | Decision | Days  | Section Used              
+--------------------------------------------------------------------------------------
+RQ-01  | non_refundable         | Deny     | 17    | Guest cancellation tiers  
+RQ-02  | non_refundable         | Deny     | 9     | Guest cancellation tiers  
+RQ-03  | non_refundable         | Deny     | 24    | Guest cancellation tiers  
+RQ-04  | non_refundable         | Allow    | 26    | Service and cleaning fees 
+RQ-05  | aircover_claim         | Allow    | N/A   | AirCover for guests       
+RQ-06  | aircover_claim         | Allow    | N/A   | AirCover for guests       
+RQ-07  | aircover_claim         | Allow    | N/A   | AirCover for guests       
+RQ-08  | aircover_claim         | Deny     | N/A   | AirCover for guests       
+RQ-09  | partial_refund         | Allow    | 22    | Guest cancellation tiers  
+RQ-10  | partial_refund         | Allow    | 35    | Guest cancellation tiers  
+RQ-11  | partial_refund         | Allow    | 16    | Guest cancellation tiers  
+RQ-12  | partial_refund         | Allow    | 10    | Guest cancellation tiers  
+RQ-13  | host_cancellation      | Allow    | N/A   | Host cancellations        
+RQ-14  | host_cancellation      | Allow    | N/A   | Host cancellations        
+RQ-15  | host_cancellation      | Allow    | N/A   | Host cancellations        
+RQ-16  | host_cancellation      | Allow    | N/A   | Host cancellations        
+RQ-17  | late_checkout_dispute  | Deny     | N/A   | AirCover for guests       
+RQ-18  | late_checkout_dispute  | Deny     | N/A   | Guest cancellation tiers  
+RQ-19  | late_checkout_dispute  | Deny     | N/A   | AirCover for guests       
+RQ-20  | late_checkout_dispute  | Deny     | N/A   | AirCover for guests       
+======================================================================================
+CHECK NOTE STATUS: CONFIRMED - 20 PAIRS, ALL 5 TYPES, ZERO UNCLEAR ANSWERS.
+======================================================================================
+```
 
 | Metric | Required | Actual | Verification Status |
 | :--- | :---: | :---: | :---: |
 | **Total Question-Answer Pairs** | **20** | **20** | ✅ PASS (Exact match, RQ-01 through RQ-20) |
 | **Scenario Types Represented** | **5** | **5** | ✅ PASS (All 5 types, exactly 4 pairs each) |
-| **Unclear or Hedged Answers** | **0** | **0** | ✅ PASS (Zero hedging, 100% decisive allow/deny) |
+| **Unclear or Hedged Answers** | **0** | **0** | ✅ PASS (Zero hedging, 100% decisive allow/deny; all 20 are clear, reasoned determinations) |
 | **Policy Sections Cited** | Yes | Yes | ✅ PASS (Exact sections from Policy Excerpt named) |
 | **Days Calculation Verified** | Yes | Yes | ✅ PASS (Exact calendar math from cancel to check-in) |
 | **Host Cancellation Flag Verified** | Yes | Yes | ✅ PASS (`host_cancelled` overrides verified) |
@@ -30,6 +71,8 @@ The 20 questions are evenly distributed across all five distinct scenario types:
 3. **`partial_refund`** (4 pairs): `RQ-09`, `RQ-10`, `RQ-11`, `RQ-12`
 4. **`host_cancellation`** (4 pairs): `RQ-13`, `RQ-14`, `RQ-15`, `RQ-16`
 5. **`late_checkout_dispute`** (4 pairs): `RQ-17`, `RQ-18`, `RQ-19`, `RQ-20`
+
+> **Note on RQ-18 Category Split:** In the source dataset, `RQ-18` is cataloged under `late_checkout_dispute` alongside checkout fee disputes (`RQ-17`, `RQ-19`, `RQ-20`). However, because the guest inquiry is an early departure requesting a refund for an unused night, it is an inquiry regarding cancellation of booked nights and properly cites `Guest cancellation tiers` where Firm tier cancellation terms reside.
 
 ---
 
@@ -197,10 +240,12 @@ The 20 questions are evenly distributed across all five distinct scenario types:
 #### Pair 18: RQ-18
 - **Guest Question:** "We decided to leave a night early because we were done with our trip, can I get that last night refunded?"
 - **Booking Facts:** Firm policy | Checked in: 2025-03-04 | Departed early: 2025-03-06 (after check-in)
+- **Scenario Category in Dataset:** `late_checkout_dispute`
+- **Category Split Note:** Cataloged under `late_checkout_dispute` in the dataset alongside checkout fee disputes, but properly cites `Guest cancellation tiers` because the question is an early departure cancellation for an unused night.
 - **Decision:** **Deny**
 - **Policy Section Named:** `Guest cancellation tiers`
 - **Reference Answer:** Denied. Under 'Guest cancellation tiers', the Firm policy covers only cancellations made before check-in and contains no rule or wording granting a refund for early departures or cancellations after check-in. Because the guest checked in on 2025-03-04 and requested cancellation after check-in on 2025-03-06, no refund is provided under the policy.
-- **Clarity & Anti-Hedge Check:** ✅ Decisive denial explicitly citing that Firm policy provides no rule or wording for cancellations after check-in.
+- **Clarity & Anti-Hedge Check:** ✅ Reasoned denial (0 unclear answers). Decisively denies the claim by strictly citing that Firm policy in the excerpt outlines rules exclusively for pre-check-in cancellations and provides no wording or rule for post-check-in/early departure refunds.
 
 #### Pair 19: RQ-19
 - **Guest Question:** "The listing said checkout was noon but the host says 10am and charged me a late fee, is that allowed?"

@@ -358,7 +358,7 @@ def print_check_note(test_set: List[GuestRefundTestCase]) -> None:
     """
     categories = sorted(list(set(tc.scenario_category for tc in test_set)))
     print("=" * 86)
-    print("AIRBNB REFUND EVAL SUITE - STAGE 1 VERIFICATION & CHECK NOTE")
+    print("AIRBNB REFULT EVAL SUITE - STAGE 1 VERIFICATION & CHECK NOTE".replace("REFULT", "REFUND"))
     print("=" * 86)
     print(f"Total Question-Answer Pairs Loaded: {len(test_set)}")
     print(f"Distinct Scenario Categories:        {len(categories)} (all 5 present)")
