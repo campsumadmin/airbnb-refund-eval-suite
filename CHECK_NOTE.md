@@ -183,7 +183,7 @@ The 20 questions are evenly distributed across all five distinct scenario types:
 
 > **Important Classification & Policy Citation Note:**  
 > While the source CSV labels all four rows (RQ-17 to RQ-20) under the `late_checkout_dispute` category, a close policy reading reveals two distinct functional buckets:  
-> 1. **Early Departure / Cancellation (RQ-18):** The guest voluntarily departed a night early and is requesting a refund for the unused night under a Firm listing. Because this is a guest cancellation of booked nights, it is governed by and must cite **`Guest cancellation tiers`** (specifically the 7-day rule: counting days from the cancellation date to the check-in date places it inside the less than 7 days window, where the outcome is *no refund*).  
+> 1. **Early Departure / Cancellation (RQ-18):** The guest voluntarily departed a night early and is requesting a refund for the unused night under a Firm listing. Because this is a guest cancellation inquiry, it is evaluated under **`Guest cancellation tiers`**. However, the Firm policy in the excerpt outlines rules exclusively for cancellations occurring before check-in; it contains no provision or wording granting a refund for early departure or cancellation after check-in.  
 > 2. **Late Checkout & Fee Disputes (RQ-17, RQ-19, RQ-20):** These questions involve guests overstaying checkout or disputing host late checkout penalties. Because no cancellation took place, they are evaluated under Airbnb's stay protection framework, **`AirCover for guests`**, and denied under the exclusionary rule that issues outside the four covered types are ineligible for refunds or fee waivers.
 
 #### Pair 17: RQ-17
@@ -196,11 +196,11 @@ The 20 questions are evenly distributed across all five distinct scenario types:
 
 #### Pair 18: RQ-18
 - **Guest Question:** "We decided to leave a night early because we were done with our trip, can I get that last night refunded?"
-- **Booking Facts:** Firm policy | Checked in: 2025-03-04 | Departed early / cancellation date: 2025-03-06 (-2 days before check-in)
+- **Booking Facts:** Firm policy | Checked in: 2025-03-04 | Departed early: 2025-03-06 (after check-in)
 - **Decision:** **Deny**
 - **Policy Section Named:** `Guest cancellation tiers`
-- **Reference Answer:** Denied. Under 'Guest cancellation tiers' for Firm listings, guests who cancel less than 7 days before check-in receive no refund. Counting the days between the cancellation date (2025-03-06) and check-in date (2025-03-04) places this request in the less than 7 days before check-in window (-2 days), so no refund is owed.
-- **Clarity & Anti-Hedge Check:** ✅ Decisive denial under the Firm policy 7-day rule (< 7 days before check-in = No refund).
+- **Reference Answer:** Denied. Under 'Guest cancellation tiers', the Firm policy defines refund conditions exclusively for cancellations occurring before check-in (at least 30 days, 7 to 29 days, or less than 7 days before check-in). The excerpt contains no rule or wording granting a refund for early departure or cancellation after check-in. Because the guest checked in on 2025-03-04 and voluntarily departed on 2025-03-06, there is no policy basis for a refund.
+- **Clarity & Anti-Hedge Check:** ✅ Decisive denial explicitly citing that Firm policy provides no rule or wording for cancellations after check-in.
 
 #### Pair 19: RQ-19
 - **Guest Question:** "The listing said checkout was noon but the host says 10am and charged me a late fee, is that allowed?"

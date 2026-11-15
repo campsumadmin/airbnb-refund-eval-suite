@@ -241,9 +241,10 @@ TEST_SET_ANSWERS: Dict[str, Dict[str, str]] = {
         "outcome_tag": "deny",
         "policy_section": "Guest cancellation tiers",
         "reference_answer": (
-            "Denied. Under 'Guest cancellation tiers' for Firm listings, guests who cancel less than 7 days before check-in receive no refund. "
-            "Counting the days between the cancellation date (2025-03-06) and check-in date (2025-03-04) places this request in the "
-            "less than 7 days before check-in window (-2 days), so no refund is owed."
+            "Denied. Under 'Guest cancellation tiers', the Firm policy defines refund conditions exclusively "
+            "for cancellations occurring before check-in (at least 30 days, 7 to 29 days, or less than 7 days before check-in). "
+            "The excerpt contains no rule or wording granting a refund for early departure or cancellation after check-in. "
+            "Because the guest checked in on 2025-03-04 and voluntarily departed on 2025-03-06, there is no policy basis for a refund."
         ),
     },
     "RQ-19": {
